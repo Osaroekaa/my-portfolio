@@ -6,35 +6,35 @@ const Portfolio = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
-  // Sample projects data - easily customizable
+  // Featured projects
   const projects = [
     {
-      name: "Weather App",
-      description: "Responsive weather application with real-time data and location search",
-      githubLink: "https://github.com/yourusername/weather-app",
-      liveLink: "https://your-weather-app.com",
+      name: "Market Square",
+      description: "A full e-commerce storefront with product browsing, cart, and swipeable mobile UI, built with React and client-side routing",
+      githubLink: "https://github.com/Osaroekaa/E-commerce-website",
+      liveLink: "https://marketsquarecloneio.vercel.app/",
+      tags: ["React", "React Router", "JavaScript"]
+    },
+    {
+      name: "Dely Pasteries",
+      description: "A landing page for a mini bakery, with a clean, mobile-first design",
+      githubLink: "https://github.com/Osaroekaa/delypasteries",
+      liveLink: "https://delypasteries.vercel.app/",
       tags: ["HTML", "CSS", "JavaScript"]
     },
     {
-      name: "Task Manager",
-      description: "Interactive todo app with local storage and drag-and-drop functionality",
-      githubLink: "https://github.com/yourusername/task-manager",
-      liveLink: "https://your-task-manager.com",
-      tags: ["React", "CSS", "JavaScript"]
+      name: "Swift Delivery",
+      description: "A delivery web app with live map tracking and local-storage-based order state",
+      githubLink: "https://github.com/Osaroekaa/SwiftDelivery",
+      liveLink: "https://luminous-licorice-0f04d1.netlify.app/",
+      tags: ["React", "Vite", "Leaflet"]
     },
     {
-      name: "Portfolio Website",
-      description: "Personal portfolio showcasing projects with modern design and animations",
-      githubLink: "https://github.com/yourusername/portfolio",
-      liveLink: "https://your-portfolio.com",
-      tags: ["HTML", "CSS", "JavaScript"]
-    },
-    {
-      name: "Restaurant Landing Page",
-      description: "Modern responsive landing page with smooth animations and mobile-first design",
-      githubLink: "https://github.com/yourusername/restaurant-landing",
-      liveLink: "https://your-restaurant-site.com",
-      tags: ["HTML", "CSS", "React"]
+      name: "CarMarket",
+      description: "A Nigerian car listings platform with authentication, image uploads, and a Postgres-backed database",
+      githubLink: "https://github.com/Osaroekaa/CarMarket",
+      liveLink: "https://car-market-murex.vercel.app/",
+      tags: ["Next.js", "Prisma", "TailwindCSS"]
     }
   ];
 
@@ -774,7 +774,7 @@ const Portfolio = () => {
             
             <div className="social-links">
               <a 
-                href="mailto:osaroekaasampson.com"
+                  href="mailto:your.email@example.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-link"
@@ -783,7 +783,7 @@ const Portfolio = () => {
                 Email
               </a>
               <a 
-                href="https://linkedin.com/in/yourprofile"
+                href="https://linkedin.com/in/Osaroekaasampson@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-link"
@@ -792,7 +792,7 @@ const Portfolio = () => {
                 LinkedIn
               </a>
               <a 
-                href="https://twitter.com/@Osaroekaa001"
+                  href="https://twitter.com/@walker_edg47897"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-link"
