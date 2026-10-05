@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, ExternalLink, Mail, Linkedin, Twitter, Sun, Moon, Menu, X } from 'lucide-react';
+import { Github, ExternalLink, Mail, Phone, Twitter, Sun, Moon, Menu, X, Download } from 'lucide-react';
 
 const Portfolio = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -9,38 +9,38 @@ const Portfolio = () => {
   // Featured projects
   const projects = [
     {
-      name: "Market Square",
-      description: "A full e-commerce storefront with product browsing, cart, and swipeable mobile UI, built with React and client-side routing",
-      githubLink: "https://github.com/Osaroekaa/E-commerce-website",
-      liveLink: "https://marketsquarecloneio.vercel.app/",
-      tags: ["React", "React Router", "JavaScript"]
-    },
-    {
-      name: "Dely Pasteries",
-      description: "A landing page for a mini bakery, with a clean, mobile-first design",
-      githubLink: "https://github.com/Osaroekaa/delypasteries",
-      liveLink: "https://delypasteries.vercel.app/",
-      tags: ["HTML", "CSS", "JavaScript"]
+      name: "CarMarket",
+      description: "A buyer in Calabar looking for a specific SUV had no way to know it was sitting in a yard in Port Harcourt. Real dealers with real stock were hard to find beyond their own streets. CarMarket brings buyers and dealers together: buyers can search across three cities from one screen, while dealers can publish a car in just four fields.",
+      githubLink: "https://github.com/Osaroekaa/CarMarket",
+      liveLink: "https://car-market-murex.vercel.app/",
+      tags: ["Next.js", "Prisma", "TailwindCSS", "PostgreSQL"]
     },
     {
       name: "Swift Delivery",
-      description: "A delivery web app with live map tracking and local-storage-based order state",
+      description: "Every unanswered 'Where is my package?' can become a phone call, an angry DM, or a refund request. Swift Delivery lets customers follow their order on a live map from payment to doorstep, so they get an answer before they need to ask, and support gets fewer calls.",
       githubLink: "https://github.com/Osaroekaa/SwiftDelivery",
       liveLink: "https://luminous-licorice-0f04d1.netlify.app/",
       tags: ["React", "Vite", "Leaflet"]
     },
     {
-      name: "CarMarket",
-      description: "A Nigerian car listings platform with authentication, image uploads, and a Postgres-backed database",
-      githubLink: "https://github.com/Osaroekaa/CarMarket",
-      liveLink: "https://car-market-murex.vercel.app/",
-      tags: ["Next.js", "Prisma", "TailwindCSS"]
+      name: "Market Square",
+      description: "Shoppers on Nigerian networks can give up before they pay: pages load slowly, stock is unclear, and delivery questions go unanswered until checkout. Market Square puts delivery information on the product page and makes the store easy to use on a thumb-reachable screen, even on a mid-range Android phone.",
+      githubLink: "https://github.com/Osaroekaa/E-commerce-website",
+      liveLink: "https://marketsquarecloneio.vercel.app/",
+      tags: ["React", "React Router", "JavaScript"]
+    },
+    {
+      name: "Dely Pastries",
+      description: "A bakery was taking orders through Instagram DMs: buried, forgotten, and difficult to price. Dely Pastries showcases the cakes, builds trust by showing a real kitchen, and puts WhatsApp and call buttons where customers are ready to order. Now orders arrive as calls, not scrolls.",
+      githubLink: "https://github.com/Osaroekaa/delypasteries",
+      liveLink: "https://delypasteries.vercel.app/",
+      tags: ["HTML", "CSS", "JavaScript"]
     }
   ];
 
   const skills = [
-    "HTML", "CSS", "JavaScript", "React", "Responsive Design", 
-    "Git", "Bootstrap", "Sass", "ES6+", "DOM Manipulation"
+    "JavaScript", "React", "Next.js", "TailwindCSS", "TypeScript",
+    "Git", "Bootstrap", "Sass", "ES6+", "Prisma"
   ];
 
   useEffect(() => {
@@ -337,6 +337,11 @@ const Portfolio = () => {
       font-size: 1.1rem;
       margin-bottom: 1.5rem;
       opacity: 0.8;
+    }
+
+    .about-text .cv-button {
+      animation: none;
+      text-decoration: none;
     }
 
     .skills-container h3 {
@@ -676,8 +681,9 @@ const Portfolio = () => {
               Hi, I'm <span className="hero-name">Osaroekaa Sampson</span>
             </h1>
             <p>
-              Frontend Developer with 1.5 years of experience creating responsive, 
-              user-friendly web applications with modern technologies and best practices.
+              I'm a frontend developer in Calabar building production React and Next.js for
+              businesses that need to sell something. Marketplaces, storefronts, booking flows,
+              and campaign pages. Mobile-first, shipped on your domain, live in days, not months.
             </p>
             <button 
               onClick={() => scrollToSection('projects')}
@@ -697,13 +703,16 @@ const Portfolio = () => {
           <div className="about-grid">
             <div className="about-text">
               <p>
-                I'm a passionate frontend developer with 1.5 years of experience building responsive web applications. 
-                I specialize in creating clean, user-friendly interfaces using modern web technologies.
+                I'm Osaroekaa Sampson, a frontend developer based in Calabar, Nigeria, with over a year of experience building responsive, user-focused web applications. I specialize in solving the engineering challenges behind production apps: debugging complex issues, resolving system-level roadblocks, and shipping clean, functional interfaces. I approach every project methodically: identify the root problem, test rigorously, and keep moving forward.
               </p>
-              <p>
-                I'm constantly learning and staying up-to-date with the latest frontend trends and best practices. 
-                I love bringing designs to life and creating smooth, interactive user experiences.
-              </p>
+              <a
+                href={`${process.env.PUBLIC_URL}/Osaroekaa-Sampson-CV.docx`}
+                download="Osaroekaa_Sampson_CV.docx"
+                className="cta-button cv-button"
+              >
+                My CV
+                <Download size={20} />
+              </a>
             </div>
             <div className="skills-container">
               <h3>Skills & Technologies</h3>
@@ -774,7 +783,7 @@ const Portfolio = () => {
             
             <div className="social-links">
               <a 
-                  href="mailto:your.email@example.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=osaroekaasampson@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-link"
@@ -783,13 +792,13 @@ const Portfolio = () => {
                 Email
               </a>
               <a 
-                href="https://linkedin.com/in/Osaroekaasampson@gmail.com"
+                href="https://wa.me/2348141934172"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-link"
               >
-                <Linkedin size={24} />
-                LinkedIn
+                <Phone size={24} />
+                WhatsApp
               </a>
               <a 
                   href="https://twitter.com/@walker_edg47897"
@@ -803,7 +812,7 @@ const Portfolio = () => {
             </div>
 
             <button 
-              onClick={() => window.location.href = 'mailto:your.email@example.com'}
+              onClick={() => window.open('https://mail.google.com/mail/?view=cm&fs=1&to=osaroekaasampson@gmail.com', '_blank', 'noopener,noreferrer')}
               className="cta-button"
             >
               Let's Talk
