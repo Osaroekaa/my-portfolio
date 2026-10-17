@@ -249,7 +249,7 @@ const Portfolio = () => {
 
     /* Hero Section */
     .hero {
-      padding-top: 12rem;
+      padding-top: 8rem;
       padding-bottom: 6rem;
       text-align: center;
       position: relative;
@@ -681,9 +681,10 @@ const Portfolio = () => {
               Hi, I'm <span className="hero-name">Osaroekaa Sampson</span>
             </h1>
             <p>
-              I'm a frontend developer in Calabar building production React and Next.js for
-              businesses that need to sell something. Marketplaces, storefronts, booking flows,
-              and campaign pages. Mobile-first, shipped on your domain, live in days, not months.
+              I'm a frontend developer based in Calabar, Nigeria, specializing in responsive web
+              applications with React and Next.js. I build polished marketplaces, online stores,
+              booking experiences, and campaign websites that help businesses serve their customers
+              and grow online.
             </p>
             <button 
               onClick={() => scrollToSection('projects')}
