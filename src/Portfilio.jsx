@@ -5,6 +5,7 @@ const Portfolio = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const [activeSection, setActiveSection] = useState('home');
 
   // Featured projects
   const projects = [
@@ -40,7 +41,7 @@ const Portfolio = () => {
 
   const skills = [
     "JavaScript", "React", "Next.js", "TailwindCSS", "TypeScript",
-    "Git", "Bootstrap", "Sass", "ES6+", "Prisma"
+    "Git", "Bootstrap", "Sass", "ES6+"
   ];
 
   useEffect(() => {
@@ -78,6 +79,7 @@ const Portfolio = () => {
 
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    setActiveSection(sectionId);
     setMobileMenuOpen(false);
   };
 
@@ -173,6 +175,18 @@ const Portfolio = () => {
       transform: translateY(-2px);
     }
 
+    .nav-link.active {
+      color: #667eea;
+    }
+
+    .nav-link:focus-visible,
+    .mobile-nav-link:focus-visible,
+    .theme-toggle:focus-visible,
+    .mobile-menu-btn:focus-visible {
+      outline: 2px solid #667eea;
+      outline-offset: 4px;
+    }
+
     .nav-link::after {
       content: '';
       position: absolute;
@@ -184,7 +198,8 @@ const Portfolio = () => {
       transition: all 0.3s ease;
     }
 
-    .nav-link:hover::after {
+    .nav-link:hover::after,
+    .nav-link.active::after {
       width: 100%;
       left: 0;
     }
@@ -244,6 +259,11 @@ const Portfolio = () => {
 
     .dark-theme .mobile-nav-link:hover {
       background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .mobile-nav-link.active {
+      color: #667eea;
+      background-color: rgba(102, 126, 234, 0.1);
     }
 
     /* Sections */
@@ -609,7 +629,7 @@ const Portfolio = () => {
       }
 
       .hero {
-        padding-top: 6.5rem;
+        padding-top: 8rem;
         padding-bottom: 3.5rem;
       }
 
@@ -683,16 +703,16 @@ const Portfolio = () => {
           <div className="logo">Osaroekaa</div>
           
           <div className="nav-links">
-            <button onClick={() => scrollToSection('home')} className="nav-link">
+            <button onClick={() => scrollToSection('home')} className={`nav-link ${activeSection === 'home' ? 'active' : ''}`} aria-current={activeSection === 'home' ? 'location' : undefined}>
               Home
             </button>
-            <button onClick={() => scrollToSection('about')} className="nav-link">
+            <button onClick={() => scrollToSection('about')} className={`nav-link ${activeSection === 'about' ? 'active' : ''}`} aria-current={activeSection === 'about' ? 'location' : undefined}>
               About
             </button>
-            <button onClick={() => scrollToSection('projects')} className="nav-link">
+            <button onClick={() => scrollToSection('projects')} className={`nav-link ${activeSection === 'projects' ? 'active' : ''}`} aria-current={activeSection === 'projects' ? 'location' : undefined}>
               Projects
             </button>
-            <button onClick={() => scrollToSection('contact')} className="nav-link">
+            <button onClick={() => scrollToSection('contact')} className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`} aria-current={activeSection === 'contact' ? 'location' : undefined}>
               Contact
             </button>
           </div>
@@ -708,16 +728,16 @@ const Portfolio = () => {
         </div>
 
         <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
-          <button onClick={() => scrollToSection('home')} className="mobile-nav-link">
+          <button onClick={() => scrollToSection('home')} className={`mobile-nav-link ${activeSection === 'home' ? 'active' : ''}`} aria-current={activeSection === 'home' ? 'location' : undefined}>
             Home
           </button>
-          <button onClick={() => scrollToSection('about')} className="mobile-nav-link">
+          <button onClick={() => scrollToSection('about')} className={`mobile-nav-link ${activeSection === 'about' ? 'active' : ''}`} aria-current={activeSection === 'about' ? 'location' : undefined}>
             About
           </button>
-          <button onClick={() => scrollToSection('projects')} className="mobile-nav-link">
+          <button onClick={() => scrollToSection('projects')} className={`mobile-nav-link ${activeSection === 'projects' ? 'active' : ''}`} aria-current={activeSection === 'projects' ? 'location' : undefined}>
             Projects
           </button>
-          <button onClick={() => scrollToSection('contact')} className="mobile-nav-link">
+          <button onClick={() => scrollToSection('contact')} className={`mobile-nav-link ${activeSection === 'contact' ? 'active' : ''}`} aria-current={activeSection === 'contact' ? 'location' : undefined}>
             Contact
           </button>
         </div>
@@ -754,7 +774,7 @@ const Portfolio = () => {
           <div className="about-grid">
             <div className="about-text">
               <p>
-                I'm Osaroekaa Sampson, a frontend developer based in Calabar, Nigeria, with over a year of experience building responsive, user-focused web applications. I specialize in solving the engineering challenges behind production apps: debugging complex issues, resolving system-level roadblocks, and shipping clean, functional interfaces. I approach every project methodically: identify the root problem, test rigorously, and keep moving forward.
+                I'm Osaroekaa Sampson, a frontend developer based in Calabar, Nigeria, with over a year of experience building responsive web applications. I use React and Next.js to create marketplaces, online stores, booking experiences, and campaign websites that put users first. I enjoy untangling complex bugs and turning requirements into clean, dependable interfaces. My approach is methodical: understand the problem, find its root cause, test the solution, and keep improving until it works well for the people using it.
               </p>
               <a
                 href={`${process.env.PUBLIC_URL}/Osaroekaa-Sampson-CV.docx`}
