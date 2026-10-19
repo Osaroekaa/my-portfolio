@@ -197,6 +197,15 @@ const Portfolio = () => {
       padding: 0.5rem;
       border-radius: 8px;
       transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .desktop-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .light-theme .theme-toggle:hover, .light-theme .mobile-menu-btn:hover {
@@ -581,6 +590,10 @@ const Portfolio = () => {
 
     /* Responsive */
     @media (max-width: 768px) {
+      .nav-container {
+        padding: 0.75rem 1rem;
+      }
+
       .nav-links {
         display: none;
       }
@@ -592,7 +605,27 @@ const Portfolio = () => {
       }
 
       .mobile-menu-btn {
-        display: block;
+        display: inline-flex;
+      }
+
+      .hero {
+        padding-top: 6.5rem;
+        padding-bottom: 3.5rem;
+      }
+
+      .hero h1 {
+        font-size: 2.3rem;
+        line-height: 1.15;
+      }
+
+      .hero p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .cta-button {
+        width: 100%;
+        justify-content: center;
       }
 
       .about-grid {
@@ -601,8 +634,21 @@ const Portfolio = () => {
         text-align: center;
       }
 
+      .skills-grid {
+        justify-content: center;
+      }
+
       .projects-grid {
         grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .project-card {
+        padding: 1.5rem 1rem;
+      }
+
+      .project-links {
+        justify-content: space-between;
       }
 
       .social-links {
@@ -613,6 +659,10 @@ const Portfolio = () => {
 
       .section {
         padding: 3rem 1rem;
+      }
+
+      .section-heading {
+        margin-bottom: 2rem;
       }
     }
 
@@ -645,12 +695,12 @@ const Portfolio = () => {
             <button onClick={() => scrollToSection('contact')} className="nav-link">
               Contact
             </button>
-            <button onClick={toggleDarkMode} className="theme-toggle">
-              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
           </div>
 
           <div className="desktop-controls">
+            <button onClick={toggleDarkMode} className="theme-toggle">
+              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
             <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="mobile-menu-btn">
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
