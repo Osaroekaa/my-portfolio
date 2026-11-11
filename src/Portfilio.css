@@ -104,8 +104,8 @@
 }
 
 .primary-navigation > a.active {
-  background: var(--accent-dim);
-  color: var(--accent);
+  background: transparent;
+  color: inherit;
 }
 
 .primary-navigation > a:hover:not(.active) {
