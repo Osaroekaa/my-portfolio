@@ -348,7 +348,12 @@ const Portfolio = () => {
               projects. Send me a note and let&apos;s talk.
             </p>
           </div>
-          <a className="button button-primary contact-button" href="mailto:osaroekaasampson@gmail.com">
+          <a
+            className="button button-primary contact-button"
+            href="https://mail.google.com/mail/?view=cm&to=osaroekaasampson%40gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Mail size={17} /> osaroekaasampson@gmail.com <ArrowUpRight size={16} />
           </a>
         </section>

@@ -107,7 +107,17 @@ test('provides a working CV download and email contact link', () => {
   expect(screen.getByRole('link', { name: /download my cv/i }).getAttribute('href')).toBe(
     '/Osaroekaa-Sampson-CV.docx'
   );
-  expect(
-    screen.getByRole('link', { name: /osaroekaasampson@gmail.com/i }).getAttribute('href')
-  ).toBe('mailto:osaroekaasampson@gmail.com');
+  const contactLink = screen.getByRole('link', { name: /osaroekaasampson@gmail.com/i });
+  expect(contactLink.getAttribute('href')).toBe(
+    'https://mail.google.com/mail/?view=cm&to=osaroekaasampson%40gmail.com'
+  );
+  expect(contactLink.getAttribute('target')).toBe('_blank');
+  expect(contactLink.getAttribute('rel')).toBe('noopener noreferrer');
+});
+
+test('links the lets-talk navigation to the contact section', () => {
+  render(<App />);
+
+  const letsTalkLink = screen.getByRole('link', { name: /let.s talk/i });
+  expect(letsTalkLink.getAttribute('href')).toBe('#contact');
 });

@@ -619,8 +619,17 @@
 }
 
 .contact-button {
+  min-height: 66px;
+  padding-block: 10px;
   flex: 0 0 auto;
+  background: #a6df5c;
   font-size: 12px;
+}
+
+.contact-button:hover {
+  background: #94cf49;
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
 }
 
 .site-footer {
