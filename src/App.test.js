@@ -101,6 +101,35 @@ test('shows project implementation details and source links', () => {
   ).toBe('https://github.com/Osaroekaa/CarMarket');
 });
 
+test('lists SwiftBox Tracker fourth and Dely Pastries fifth', () => {
+  render(<App />);
+
+  const projectCards = screen.getAllByRole('article');
+  expect(projectCards.map((card) => card.getAttribute('aria-label'))).toEqual([
+    'CarMarket project',
+    'Swift Delivery project',
+    'Market Square project',
+    'SwiftBox Tracker project',
+    'Dely Pastries project',
+  ]);
+  expect(screen.getByText('05', { selector: '.hero-meta strong' })).not.toBeNull();
+
+  const trackerCard = screen.getByRole('article', { name: 'SwiftBox Tracker project' });
+  expect(within(trackerCard).getByText('04 / 05')).not.toBeNull();
+  expect(
+    within(trackerCard).getByText(/current location, route, estimated arrival/i)
+  ).not.toBeNull();
+  expect(
+    within(trackerCard).getByRole('link', { name: /live site/i }).getAttribute('href')
+  ).toBe('https://swiftbox-tracker.vercel.app/');
+  expect(
+    within(trackerCard).getByRole('link', { name: /source code/i }).getAttribute('href')
+  ).toBe('https://github.com/Osaroekaa/swiftbox-tracker');
+
+  const pastriesCard = screen.getByRole('article', { name: 'Dely Pastries project' });
+  expect(within(pastriesCard).getByText('05 / 05')).not.toBeNull();
+});
+
 test('provides a working CV download and email contact link', () => {
   render(<App />);
 

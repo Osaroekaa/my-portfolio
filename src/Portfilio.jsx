@@ -42,9 +42,19 @@ const projects = [
     liveLink: 'https://marketsquarecloneio.vercel.app/',
   },
   {
+    name: 'SwiftBox Tracker',
+    category: 'Shipment tracking',
+    number: '04',
+    description:
+      'A shipment-tracking experience where customers can look up a tracking number to see delivery status, current location, route, estimated arrival, latest update, and shipment history.',
+    tags: ['React', 'Vite', 'Axios'],
+    githubLink: 'https://github.com/Osaroekaa/swiftbox-tracker',
+    liveLink: 'https://swiftbox-tracker.vercel.app/',
+  },
+  {
     name: 'Dely Pastries',
     category: 'Business website',
-    number: '04',
+    number: '05',
     description:
       'A bakery storefront that presents its products and kitchen, with direct WhatsApp and phone links to make placing an order straightforward.',
     tags: ['HTML', 'CSS', 'JavaScript'],
@@ -52,6 +62,7 @@ const projects = [
     liveLink: 'https://delypasteries.vercel.app/',
   },
 ];
+const projectCount = String(projects.length).padStart(2, '0');
 
 const skills = [
   'JavaScript',
@@ -221,7 +232,7 @@ const Portfolio = () => {
               </a>
             </div>
             <div className="hero-meta" aria-label="Developer details">
-              <span><strong>04</strong> selected projects</span>
+              <span><strong>{projectCount}</strong> selected projects</span>
               <span><strong>React</strong> &amp; Next.js</span>
               <span><MapPin size={14} /> Based in Nigeria</span>
             </div>
@@ -282,7 +293,7 @@ const Portfolio = () => {
                 aria-label={`${project.name} project`}
               >
                 <div className="project-topline">
-                  <span className="project-number">{project.number} / 04</span>
+                  <span className="project-number">{project.number} / {projectCount}</span>
                   <span className="project-category">{project.category}</span>
                 </div>
                 <h3>{project.name}</h3>
@@ -293,9 +304,11 @@ const Portfolio = () => {
                   ))}
                 </div>
                 <div className="project-links">
-                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                    <Github size={16} /> Source code <ArrowUpRight size={14} />
-                  </a>
+                  {project.githubLink && (
+                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                      <Github size={16} /> Source code <ArrowUpRight size={14} />
+                    </a>
+                  )}
                   <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
                     Live site <ArrowUpRight size={14} />
                   </a>
